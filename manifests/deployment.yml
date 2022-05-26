@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vistaarkcomponentprocessing 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vistaarkcomponentprocessing
+  template:
+    metadata:
+      labels:
+        app: vistaarkcomponentprocessing 
+    spec:
+      containers:
+        - name: vistaarkcomponentprocessing 
+          image: romfseacr.azurecr.io/vistaarkcomponentprocessing
+          ports:
+          - containerPort: 80
