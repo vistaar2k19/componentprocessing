@@ -62,7 +62,7 @@ namespace ComponentProcessing.Controllers
 
                 //_logger.LogInformation("Calling PackagingDeliveryCharge microservice for packaging and delivery charge");
                 //microserviceCall
-                var client = new RestClient("https://localhost:44380/GetPackagingDeliveryCharge");
+                var client = new RestClient("http://20.237.80.83/GetPackagingDeliveryCharge");
                 client.AddDefaultHeader("Authorization", Authorization);
                 RestRequest restRequest = new RestRequest($"{request.ComponentType}/{request.Quantity}", Method.Get);
                 var response = await client.ExecuteAsync(restRequest);
